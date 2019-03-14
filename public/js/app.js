@@ -14,7 +14,7 @@ document.querySelector("form").addEventListener("submit", (e) => {
     if (!city) {
         alert("Please Provide Location !!")
     } else {
-        fetch(`http://localhost:3000/weather?location=${city}`)
+        fetch(`/weather?location=${city}`)
         .then(res => {
             res.json().then(data => {
                 if(data.Error) {

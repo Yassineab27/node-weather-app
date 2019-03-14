@@ -4,6 +4,8 @@ const app = express();
 const hbs = require("hbs");
 const geocode = require("./utils/geocode");
 const forecast = require("./utils/forecast");
+// for heroku
+const port = process.env.PORT || 3000;
 
 // Setup Handlebars engine & views location
 app.set("view engine", "hbs") // use after: npm i hbs
@@ -77,6 +79,6 @@ app.get("*", (req, res) => {
     });
 });
 
-app.listen(3000, () => {
-    console.log("Server is up on port 3000")
+app.listen(port, () => {
+    console.log(`Server is up on port ${port}`)
 });
