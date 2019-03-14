@@ -20,8 +20,8 @@ document.querySelector("form").addEventListener("submit", (e) => {
                 if(data.Error) {
                     message1.textContent = data.Error
                 } else {
-                    message2.textContent = `Location: ${data.location}.
-                    Weather: ${data.forecast}`
+                    message1.textContent = `Location: ${data.location}`
+                    message2.textContent = `Weather: ${data.forecast}.`
                 }
             });
         });
