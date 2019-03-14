@@ -9,10 +9,11 @@ const forecast = (latitude, longitude, callback) => {
             callback("Unable to Find Location!", undefined)
         } else {
             const { currently, daily } = res.body
-            callback(undefined, `${daily.data[0].summary} It is currently ${currently.temperature} degrees out. There is a ${res.body.currently.precipProbability}% chance of rain!`
+            callback(undefined, `${daily.data[0].summary} It is currently ${currently.temperature} degrees out. There is a ${res.body.currently.precipProbability}% chance of rain!
+            Humidity: ${daily.data[0].humidity}. Wind Speed: ${daily.data[0].windSpeed}`
             )
-        }
-    })
+        };
+    });
 };
 
 module.exports = forecast;
